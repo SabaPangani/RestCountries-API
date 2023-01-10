@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="button-div">
+        <button [routerLink]="['/home']"> <i class="bi bi-arrow-left"></i> Back</button>
+    </div>    
+</div>
+
+<main>
+    <section class="detail">
+        <div class="container">
+            <div class="wrapper">
+                <div class="img-side">
+                    <img src="{{apiCountry.flags.svg}}" alt="">
+                </div>
+                <div class="info-side">
+                    <h1 class="name">
+                        {{apiCountry.name.common}}
+                    </h1>
+                    <div class="sub-info">
+                        <p>Official Name:<span>{{apiCountry.name.official}}</span></p>
+                        <p>Population:<span>{{apiCountry.population}}</span></p>
+                        <p>Capital:<span>{{apiCountry.capital}}</span></p>
+                        <p>Region:<span>{{apiCountry.region}}</span></p>
+                        <p>Sub Region:<span>{{apiCountry.subregion}}</span></p>
+                        <p>Top Level Domain:<span>{{apiCountry.tld}}</span></p>
+                        <p>Currencies:<span>{{apiCountry.currencies.awg}}</span></p>
+                        <p>Languages:<span id="language">{{apiCountry.languages}}</span></p>
+                    </div>
+                    <div class="border-countries">
+                        <p>Border Countries:<span style="margin-left:10px;" *ngFor="let border of apiCountry.borderCountries">{{border}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

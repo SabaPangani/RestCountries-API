@@ -1,0 +1,44 @@
+nav{
+    width: 100vw;
+    max-width: 100%;
+    box-shadow: 2px 2px 20px var(--shadow);
+    padding: 15px 0;
+    .container{
+        margin: auto;
+        width: 2500px;
+        max-width: 100%;
+        .wrapper{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            h1{
+                font-weight: 800;
+            }
+            .theme{
+                display: flex;
+                align-items: center;
+                .bi{
+                    margin-right: 5px;
+                }
+                span{
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:334px) {
+   .container{
+    .wrapper{
+        justify-content: center !important;
+        .bi{
+            margin-right: 0 !important;
+            margin-left: 25px;
+        }
+    }
+   }
+}

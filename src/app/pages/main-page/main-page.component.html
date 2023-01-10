@@ -1,0 +1,57 @@
+<section class="filter">
+    <div class="container">
+        <div class="wrapper">
+            <form action="">
+                <i class="bi bi-search"></i>
+                <input #search (input)="Search(search.value)" placeholder="Search for a country..." type="text" name="" id="" class="countryInput">
+            </form>
+            <select class="regionSelector" (change)="filterRegion($event.target)" name="" id="">
+                <option *ngFor="let i of regions">{{i}}</option>
+            </select>
+        </div>
+    </div>
+</section>
+<main>
+    <section class="country-cards">
+        <div class="container">
+            <div *ngIf="!showFiltered" class="wrapper">
+                <!-- <div *ngFor="let country of countries" [routerLink]="['/Details/' + country.countryName]" [queryParams]="{name:country.countryName}" class="card"> -->
+                <div *ngFor="let country of countries" [routerLink]="['/Details/' + country.name.common]" class="card">
+                    <div class="card-header">
+                        <img src="{{country.flags.png}}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h1 class="name">
+                            {{country.name.common}}
+                        </h1>
+
+                        <div class="sub-info">
+                            <p>Population:<span>{{country.population}}</span></p>
+                            <p>Region:<span>{{country.region}}</span></p>
+                            <p>Capital:<span>{{country.capital}}</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="showFiltered" class="wrapper">
+                <!-- <div *ngFor="let country of countries" [routerLink]="['/Details/' + country.countryName]" [queryParams]="{name:country.countryName}" class="card"> -->
+                <div *ngFor="let country of filteredCountries" [routerLink]="['/Details/' + country.name.common]" class="card">
+                    <div class="card-header">
+                        <img src="{{country.flags.png}}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h1 class="name">
+                            {{country.name.common}}
+                        </h1>
+
+                        <div class="sub-info">
+                            <p>Population:<span>{{country.population}}</span></p>
+                            <p>Region:<span>{{country.region}}</span></p>
+                            <p>Capital:<span>{{country.capital}}</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
