@@ -35,6 +35,7 @@
             </div>
             <div *ngIf="showFiltered" class="wrapper">
                 <!-- <div *ngFor="let country of countries" [routerLink]="['/Details/' + country.countryName]" [queryParams]="{name:country.countryName}" class="card"> -->
+                <h1 class="result">Found {{filteredCountries.length}} country</h1>
                 <div *ngFor="let country of filteredCountries" [routerLink]="['/Details/' + country.name.common]" class="card">
                     <div class="card-header">
                         <img src="{{country.flags.png}}" alt="">

@@ -23,7 +23,14 @@ export class MainPageComponent {
   }
 
   Search(value:string){
-    this.showFiltered = true;
+    this.filteredCountries = [...this.countries]
+
+    if (value != ""){
+      this.showFiltered = true;
+    }else{
+      this.showFiltered = false;
+    }
+
     this.search = value.toLowerCase();
     this.filteredCountries = this.filteredCountries.filter((country:any)=>{
       return country.name.common.toLowerCase().includes(this.search);
@@ -32,7 +39,14 @@ export class MainPageComponent {
   regions = "All Africa Americas Asia Europe Oceania".split(' ');
 
   filterRegion(newValue:any){
-    this.showFiltered = true;
+    this.filteredCountries = [...this.countries]
+    console.log(newValue.value)
+
+    if (newValue.value != "All"){
+      this.showFiltered = true;
+    }else{
+      this.showFiltered = false;
+    }
    
    this.filteredCountries = this.filteredCountries.filter((country:any) =>{
     return country.region === newValue.value;
