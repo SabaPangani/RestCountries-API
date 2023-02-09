@@ -1,4 +1,4 @@
-# RestCountries
+# RestCountries old project
 
 Live Url https://sabapangani.github.io/RestCountries-API/ || need to add dark mode
 
